@@ -1,4 +1,4 @@
-# github-readme-rss
+# github-readme-medium-recent-article
 
 **Howdy there!!!**
 
