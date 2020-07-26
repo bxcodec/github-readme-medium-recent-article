@@ -1,14 +1,14 @@
 import { NowRequest, NowResponse } from '@vercel/node';
-import { getArticle } from '../../util/medium';
-import medium from '../../assets/medium';
+import { getArticle } from '../../../util/medium';
+import medium from '../../../assets/medium';
 
 export default async (req: NowRequest, res: NowResponse) => {
   const {
-    query: { index },
+    query: { user, index },
     headers,
   } = req;
 
-  const { title, thumbnail, url, date, description } = await getArticle(index);
+  const { title, thumbnail, url, date, description } = await getArticle(index,user);
 
   const dest = headers['sec-fetch-dest'] || headers['Sec-Fetch-Dest'];
   const accept = headers['accept'];
