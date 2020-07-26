@@ -26,7 +26,7 @@ Import this link in Readme as image source.
   https://github-readme-medium-recent-article.vercel.app/medium/<medium-username>/<article-index>
 ```
 - `medium-username`: your medium username/profile
-- `article-index` : your recent article index. e.g: `0` means your latest articles.
+- `article-index` : your recent article index. e.g: `0` means your latest article.
 
 #### Example
 **Script in Readme.md**
