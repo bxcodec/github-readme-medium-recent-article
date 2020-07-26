@@ -1,6 +1,6 @@
 import { NowRequest, NowResponse } from '@vercel/node';
-import { getArticle } from '../../../util/medium';
-import medium from '../../../assets/medium';
+import { getArticle } from '../../util/medium';
+import medium from '../../assets/medium';
 
 export default async (req: NowRequest, res: NowResponse) => {
   const {

@@ -1,6 +1,6 @@
 {
   "version": 2,
   "routes": [
-    { "src": "/api/medium/*/*", "dest": "/api/medium/[user]" }
+    { "src": "/medium/*/*", "dest": "/medium/[user]" }
   ]
 }
