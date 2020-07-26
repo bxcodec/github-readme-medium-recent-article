@@ -4,11 +4,11 @@ import medium from '../../assets/medium';
 
 export default async (req: NowRequest, res: NowResponse) => {
   const {
-    query: { index },
+    query: { username, index },
     headers,
   } = req;
 
-  const { title, thumbnail, url, date, description } = await getArticle(index);
+  const { title, thumbnail, url, date, description } = await getArticle(index,username);
 
   const dest = headers['sec-fetch-dest'] || headers['Sec-Fetch-Dest'];
   const accept = headers['accept'];

@@ -3,7 +3,7 @@ import moment from 'moment';
 
 export const getArticle = async (index, username) => {
   
-  const rssUrl:string = 
+  const rssUrl =  new String("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/").concat(username);
   const {
     data: { items },
   } = await axios.get(rssUrl);
