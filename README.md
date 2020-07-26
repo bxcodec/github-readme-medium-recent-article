@@ -14,10 +14,7 @@ Show your recent published article from Medium on your Readme.
 
 
 ## Support
-
-You can file an [Issue](https://github.com/bxcodec/github-readme-medium-recent-article/issues/new).
-See documentation in [Godoc](https://godoc.org/github.com/bxcodec/github-readme-medium-recent-article) or in [go.dev](https://pkg.go.dev/github.com/bxcodec/github-readme-medium-recent-article?tab=doc)
-
+You can file an [Issue](https://github.com/bxcodec/github-readme-medium-recent-article/issues/new)
 
 ## Getting Started
 #### Usage
