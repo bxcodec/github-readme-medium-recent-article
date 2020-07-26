@@ -24,7 +24,7 @@ Put this link in an html syntax on your on your Readme
 ```bash
   https://github-readme-medium-recent-article.vercel.app/medium/<medium-username>/<article-index>
 ```
-- `medium-usernmae`: your medium username/profile
+- `medium-username`: your medium username/profile
 - `article-index` : your recent article index. e.g: `0` means your latest articles.
 
 #### Example
