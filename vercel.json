@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "routes": [
-    { "src": "/medium/*/*", "dest": "/medium/[user]" }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/$1" }
   ]
 }
