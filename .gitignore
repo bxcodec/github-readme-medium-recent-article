@@ -1,0 +1,7 @@
+node_modules/*
+.idea/*
+.vercel
+api/asset.ts
+api/data.ts
+api/winner.ts
+*.log
