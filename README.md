@@ -2,6 +2,7 @@
 
 **Howdy there!!!**
 
+
 Show your recent published article from Medium on your Readme. See the live [demo](https://github.com/bxcodec)
 ![github-readme-medium-recent-article](./example.png)
 
@@ -25,7 +26,7 @@ Import this link in Readme as image source.
   https://github-readme-medium-recent-article.vercel.app/medium/<medium-username>/<article-index>
 ```
 - `medium-username`: your medium username/profile
-- `article-index` : your recent article index. e.g: `0` means your latest articles.
+- `article-index` : your recent article index. e.g: `0` means your latest article.
 
 #### Example
 **Script in Readme.md**
