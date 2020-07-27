@@ -26,17 +26,22 @@ Import this link in Readme as image source.
   https://github-readme-medium-recent-article.vercel.app/medium/<medium-username>/<article-index>
 ```
 - `medium-username`: your medium username/profile
-- `article-index` : your recent article index. e.g: `0` means your latest article.
+- `article-index` : your recent article index. e.g: `0` means your latest article. 
 
 #### Example
 **Script in Readme.md**
 
 ```html
  <a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@imantumorang/0"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@imantumorang/0" alt="Recent Article 0"> 
+
+<a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@imantumorang/2"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@imantumorang/2" alt="Recent Article 2"> 
+
 ```
 **Result**
 
- <a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@imantumorang/0"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@imantumorang/0" alt="Recent Article 0">
+<a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@imantumorang/0"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@imantumorang/0" alt="Recent Article 0">
+
+<a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@imantumorang/2"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@imantumorang/2" alt="Recent Article 2">
 
 
 ## Inspirations and Thanks
