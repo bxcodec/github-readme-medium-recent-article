@@ -15,7 +15,7 @@ export default async (req: NowRequest, res: NowResponse) => {
   const isImage = dest ? dest === 'image' : !/text\/html/.test(accept);
 
   if (isImage) {
-    res.setHeader('Cache-Control', 's-maxage=36000, stale-while-revalidate');
+    res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate');
     res.setHeader('Content-Type', 'image/svg+xml');
     // res.setHeader('Cache-Control', 'no-cache');
 
