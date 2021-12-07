@@ -10,7 +10,7 @@
     "@vercel/node": "^1.7.3"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "moment": "^2.27.0"
   }
 }
