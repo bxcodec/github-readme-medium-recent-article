@@ -11,6 +11,7 @@ export async function GET(req: Request) {
   const { title, thumbnail, url, date, description } = await getArticle(idx, username);
   const dest = headers.get('sec-fetch-dest') || headers.get('Sec-Fetch-Dest');
   const accept = headers.get('accept');
+  // @ts-ignore
   const isImage = dest ? dest === 'image' : !/text\/html/.test(accept);
 
   if (isImage) {
