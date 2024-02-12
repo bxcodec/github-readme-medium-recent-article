@@ -1,3 +1,4 @@
+// @ts-ignore
 export default ({ title, description, date, url, thumbnail }) => `
 <svg fill="none" width="800" height="120" xmlns="http://www.w3.org/2000/svg">
 	<foreignObject width="100%" height="100%">
