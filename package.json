@@ -1,16 +1,30 @@
 {
-  "name": "github-readme-rss",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/bxcodec/github-readme-rss.git",
-  "author": "bxcodec <iman@tumorang.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/axios": "^0.14.0",
-    "@vercel/node": "^1.7.3"
+  "name": "github-medium-rss",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "axios": "^0.21.2",
-    "moment": "^2.29.4"
+    "@vercel/node": "^3.0.18",
+    "axios": "^1.6.7",
+    "jsdom": "^24.0.0",
+    "moment": "^2.30.1",
+    "next": "14.1.0",
+    "node-fetch": "^3.3.2",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.6",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.1.0",
+    "typescript": "^5"
   }
 }
