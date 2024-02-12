@@ -1,6 +1,5 @@
 import axios from 'axios';
 import moment from 'moment';
-import fetch from 'node-fetch';
 
 
 import { JSDOM } from 'jsdom';
