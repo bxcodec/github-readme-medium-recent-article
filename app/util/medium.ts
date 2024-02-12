@@ -5,7 +5,7 @@ import fetch from 'node-fetch';
 
 import { JSDOM } from 'jsdom';
 
-export const getArticle = async (index, username) => {
+export const getArticle = async (index: string, username: string) => {
   const rssUrl = new String("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/").concat(username);
   const {
     data: { items },
@@ -13,6 +13,7 @@ export const getArticle = async (index, username) => {
 
   let fixItem: any[] = []
 
+  // @ts-ignore
   items.forEach(element => {
     const thumbnail = extractFirstImageFromHTML(element.description)
     if (thumbnail) {
@@ -69,8 +70,7 @@ function extractFirstImageFromHTML(html: string): ImageData | null {
     const figcaption = figure.parentElement ? figure.parentElement.querySelector('figcaption') : null;
     return {
       src: img.src,
-      alt: img.alt || '', // Use an empty string if alt is not present
-      caption: figcaption ? figcaption.textContent : undefined, // Include caption if available
+      alt: img.alt || '', // Use an empty string if alt is not present 
     };
   }
 

@@ -8,13 +8,9 @@ export async function GET(req: Request) {
   const idx = pathName.pop(); // Get the last segment of the path
   const username = pathName.pop(); // Get the username
 
+  // @ts-ignore
   const { title, thumbnail, url, date, description } = await getArticle(idx, username);
-  // const dest = headers.get('sec-fetch-dest') || headers.get('Sec-Fetch-Dest');
-  // const accept = headers.get('accept');
-  // const isImage = dest ? dest === 'image' : !/text\/html/.test(accept);
 
-  // if (isImage) {
-  // Generate the SVG content
   const svgContent = medium({
     title,
     thumbnail,
@@ -29,11 +25,4 @@ export async function GET(req: Request) {
       'Content-Type': 'image/svg+xml',
     },
   });
-  // }
-
-  // return new Response(JSON.stringify({ message: "Not an image request" }), {
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  // });
 }
