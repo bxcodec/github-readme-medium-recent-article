@@ -1,27 +1,26 @@
 import axios from 'axios';
 import moment from 'moment';
-
-
+import { feedToJSON } from './feedtojson';
 import { JSDOM } from 'jsdom';
 
-export const getArticle = async (index: string, username: string) => {
-  const rssUrl = new String("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/").concat(username);
-  const {
-    data: { items },
-  } = await axios.get(rssUrl);
 
+export const getArticle = async (index: string, username: string) => {
+  const rssUrl = `https://medium.com/feed/${username}`
+  const res = await feedToJSON(rssUrl);
   let fixItem: any[] = []
 
   // @ts-ignore
-  items.forEach(element => {
-    const thumbnail = extractFirstImageFromHTML(element.description)
+  res?.items.forEach(element => {
+    console.log("ELEMENT ", element)
+    const thumbnail = extractFirstImageFromHTML(element.content)
+    console.log("THUMBNAIL ", thumbnail)
     if (thumbnail) {
       element.thumbnail = thumbnail
       fixItem.push(element)
     }
   });
 
-  const { title, pubDate, link: url, thumbnail, description } = fixItem[
+  const { title, published: pubDate, link: url, thumbnail, content: description } = fixItem[
     // @ts-ignore
     index || 0
   ];
@@ -33,7 +32,6 @@ export const getArticle = async (index: string, username: string) => {
 
   const imgTypeArr = thumbnail.src.split('.');
   const imgType = imgTypeArr[imgTypeArr.length - 1];
-  console.log("IMG TYPE ", imgType)
 
   const convertedThumbnail = `data:image/${imgType};base64,${base64Img}`;
   return {
@@ -66,7 +64,7 @@ function extractFirstImageFromHTML(html: string): ImageData | null {
   const figure = document.querySelector('figure img');
   if (figure) {
     const img = figure as HTMLImageElement; // Ensure it's treated as an image element
-    const figcaption = figure.parentElement ? figure.parentElement.querySelector('figcaption') : null;
+    // const figcaption = figure.parentElement ? figure.parentElement.querySelector('figcaption') : null;
     return {
       src: img.src,
       alt: img.alt || '', // Use an empty string if alt is not present 
