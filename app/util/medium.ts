@@ -11,9 +11,7 @@ export const getArticle = async (index: string, username: string) => {
 
   // @ts-ignore
   res?.items.forEach(element => {
-    console.log("ELEMENT ", element)
     const thumbnail = extractFirstImageFromHTML(element.content)
-    console.log("THUMBNAIL ", thumbnail)
     if (thumbnail) {
       element.thumbnail = thumbnail
       fixItem.push(element)
