@@ -18,6 +18,5 @@ updates:
       development-dependencies:
         dependency-type: development
         update-types:
-          - major
           - minor
           - patch
