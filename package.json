@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@vercel/node": "^3.2.16",
-    "axios": "^1.7.7",
+    "@vercel/node": "^3.2.29",
+    "axios": "^1.7.9",
     "jsdom": "^24.1.1",
     "moment": "^2.30.1",
     "next": "14.2.13",
