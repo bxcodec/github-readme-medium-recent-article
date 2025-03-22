@@ -1,7 +1,10 @@
 import { getArticle } from '../../../util/medium';
 import medium from '../../../assets/medium';
-
+import { injectSpeedInsights } from '@vercel/speed-insights';
+import { inject } from '@vercel/analytics';
 export async function GET(req: Request) {
+  inject();
+  injectSpeedInsights();
   const reqURL = new URL(req.url);
   const headers = req.headers;
   var pathName = reqURL.pathname.split('/');
@@ -14,24 +17,24 @@ export async function GET(req: Request) {
   // @ts-ignore
   const isImage = dest ? dest === 'image' : !/text\/html/.test(accept);
 
-  if (isImage) {
-    // Generate the SVG content
-    const svgContent = medium({
-      title,
-      thumbnail,
-      url,
-      date,
-      description,
-    });
+  // if (isImage) {
+  // Generate the SVG content
+  const svgContent = medium({
+    title,
+    thumbnail,
+    url,
+    date,
+    description,
+  });
 
-    return new Response(svgContent, {
-      headers: {
-        'Cache-Control': 's-maxage=3600, stale-while-revalidate',
-        'Content-Type': 'image/svg+xml',
-      },
-    });
-  }
+  return new Response(svgContent, {
+    headers: {
+      'Cache-Control': 's-maxage=3600, stale-while-revalidate',
+      'Content-Type': 'image/svg+xml',
+    },
+  });
+  // }
 
   // Redirect to the URL if not an image request
-  return Response.redirect(url, 301);
+  // return Response.redirect(url, 301);
 }
