@@ -2,7 +2,7 @@ import axios from 'axios';
 import moment from 'moment';
 import { feedToJSON } from './feedtojson';
 import { JSDOM } from 'jsdom';
-
+import { getRandomUserAgent } from './useragent';
 
 export const getArticle = async (index: string, username: string) => {
   const rssUrl = `https://medium.com/feed/${username}`
@@ -24,11 +24,13 @@ export const getArticle = async (index: string, username: string) => {
   ];
 
   const description = content || desc;
-
-
-  const responseThumbnail = await axios(thumbnail.src, { responseType: 'arraybuffer' });
+  const responseThumbnail = await axios(thumbnail.src, {
+    responseType: 'arraybuffer',
+    headers: {
+      'User-Agent': getRandomUserAgent(),
+    }
+  });
   const base64Img = Buffer.from(responseThumbnail.data, 'binary').toString('base64');
-
 
   const imgTypeArr = thumbnail.src.split('.');
   const imgType = imgTypeArr[imgTypeArr.length - 1];
