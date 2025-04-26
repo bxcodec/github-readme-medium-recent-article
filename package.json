@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@vercel/node": "^4.0.0",
-    "axios": "^1.7.7",
+    "axios": "^1.9.0",
     "jsdom": "^24.1.1",
     "moment": "^2.30.1",
     "next": "14.2.26",
