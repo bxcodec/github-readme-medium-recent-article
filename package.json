@@ -15,14 +15,14 @@
     "moment": "^2.30.1",
     "next": "15.5.3",
     "react": "^18",
-    "react-dom": "^18",
+    "react-dom": "^19",
     "rss-to-json": "^2.1.1"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.7",
     "@types/node": "^24",
     "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react-dom": "^19",
     "eslint": "^8",
     "eslint-config-next": "15.5.3",
     "typescript": "^5"
