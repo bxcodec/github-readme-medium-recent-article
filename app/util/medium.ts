@@ -1,8 +1,8 @@
 import axios from 'axios';
 import moment from 'moment';
 import { feedToJSON } from './feedtojson';
-import { JSDOM } from 'jsdom';
 import { getRandomUserAgent } from './useragent';
+import { parse } from 'node-html-parser';
 
 export const getArticle = async (index: string, username: string) => {
   const rssUrl = `https://medium.com/feed/${username}`
@@ -52,10 +52,9 @@ export const getArticle = async (index: string, username: string) => {
 
 
 function stripHTML(text: string) {
-  const dom = new JSDOM(text);
-  const textContent = dom.window.document.body.textContent || '';
-  const cleanText = textContent.trim();
-  return cleanText;
+  const root = parse(text);
+  const textContent = root.textContent || '';
+  return textContent.replace(/\s+/g, ' ').trim();
 }
 
 
@@ -67,8 +66,7 @@ type ImageData = {
 };
 
 function extractFirstImageFromHTML(html: string): ImageData | null {
-  const dom = new JSDOM(html);
-  const document = dom.window.document;
+  const root = parse(html);
 
   // Try different strategies to find the first image
   const imageSelectors = [
@@ -78,12 +76,15 @@ function extractFirstImageFromHTML(html: string): ImageData | null {
   ];
 
   for (const selector of imageSelectors) {
-    const img = document.querySelector(selector) as HTMLImageElement;
+    const img = root.querySelector(selector);
     if (img) {
-      return {
-        src: img.src,
-        alt: img.alt || '', // Use empty string if alt is not present
-      };
+      const src = img.getAttribute('src');
+      if (src) {
+        return {
+          src: src,
+          alt: img.getAttribute('alt') || '',
+        };
+      }
     }
   }
 
