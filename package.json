@@ -15,13 +15,13 @@
     "next": "15.5.9",
     "node-html-parser": "^7.0.1",
     "react": "^18",
-    "react-dom": "^18",
+    "react-dom": "^19",
     "rss-to-json": "^2.1.1"
   },
   "devDependencies": {
     "@types/node": "^24",
     "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react-dom": "^19",
     "eslint": "^8",
     "eslint-config-next": "15.5.3",
     "typescript": "^5"
