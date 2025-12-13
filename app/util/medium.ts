@@ -17,7 +17,6 @@ function convertToMiroUrl(cdnUrl: string): string {
 
 export const getArticle = async (index: string, username: string) => {
   const rssUrl = `https://medium.com/feed/${username}`
-  console.log(`>>>>>>rssUrl: ${rssUrl}`)
   const res = await feedToJSON(rssUrl);
   let fixItem: any[] = []
 
@@ -45,7 +44,6 @@ export const getArticle = async (index: string, username: string) => {
   try {
     // Use miro.medium.com which doesn't have Cloudflare bot protection
     const miroUrl = convertToMiroUrl(thumbnail.src);
-    console.log(`>>>>>>miroUrl: ${miroUrl}`)
 
     const responseThumbnail = await axios(miroUrl, {
       responseType: 'arraybuffer',
