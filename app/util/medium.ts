@@ -10,7 +10,7 @@ function convertToMiroUrl(cdnUrl: string): string {
   const match = cdnUrl.match(/cdn-images-\d\.medium\.com\/max\/\d+\/(.+)$/);
   if (match) {
     // Use smaller size (150px) for thumbnail to reduce payload
-    return `https://miro.medium.com/v2/resize:fit:150/${match[1]}`;
+    return `https://miro.medium.com/v2/resize:fit:800/${match[1]}`;
   }
   return cdnUrl;
 }
