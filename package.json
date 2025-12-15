@@ -19,7 +19,7 @@
     "rss-to-json": "^2.1.1"
   },
   "devDependencies": {
-    "@types/node": "^24",
+    "@types/node": "^25",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
