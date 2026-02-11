@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@vercel/node": "^5.5.5",
-    "axios": "^1.13.2",
+    "axios": "^1.13.5",
     "moment": "^2.30.1",
     "next": "15.5.9",
     "node-html-parser": "^7.0.1",
