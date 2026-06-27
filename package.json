@@ -9,10 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@vercel/node": "^5.5.5",
     "axios": "^1.13.2",
     "moment": "^2.30.1",
-    "next": "15.5.9",
+    "next": "15.5.19",
     "node-html-parser": "^7.0.1",
     "react": "^18",
     "react-dom": "^18",
@@ -25,5 +24,13 @@
     "eslint": "^8",
     "eslint-config-next": "15.5.3",
     "typescript": "^5"
+  },
+  "overrides": {
+    "postcss": "^8.5.10",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/type-utils": "^7.18.0",
+    "@typescript-eslint/utils": "^7.18.0",
+    "@typescript-eslint/typescript-estree": "^7.18.0",
+    "fast-xml-parser": "^5.7.0"
   }
 }
